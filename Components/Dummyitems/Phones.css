@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 2px solid rgba(0, 0, 0, 0.105);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-right: 2px solid green;
+    
+}
+.PRODUCT{
+    flex: 0 0 25%; 
+    margin: 10px;
+    text-align: center;
+   
+}
+
+.price_logo{
+    margin: 60px;   
+}
+.All_products{
+    border: 2px solid rgba(0, 0, 0, 0.105);
+    padding-top: 20px;
+    background-color: white;
+    border-radius: 10px ;
+}
