@@ -1,0 +1,13 @@
+
+
+.All_cart_items{
+    display:"grid";
+     justify-content:"space-between";
+      align-items:"center";
+      background-repeat:"no-repeat"; 
+      margin-top:"1px"; 
+      /* marginTop:"74px", */
+ 
+    
+       
+}

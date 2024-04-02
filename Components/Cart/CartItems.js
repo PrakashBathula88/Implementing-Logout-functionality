@@ -1,40 +1,51 @@
-
 import React from "react";
 
-const Cart = ({ cartElements }) => {
+
+import "../Cart/Cart.css";
+import CartPortal from "../CartModal/Cartportals";
+import { useProductContext } from "../AddCart/CartProviders";
+const Cart = ({ cartElements,Onclose }) => {
+  const{HandleRemove}=useProductContext();
   return (
-    <div style={{display:"grid",  justifyContent:"space-between" ,alignItems:"center", marginTop:"20px", marginLeft:"71%", }}>
-      <table >
+   <CartPortal onclose={Onclose}>
+    <div className="All_cart_items">
+     
+      <table style={{ marginLeft: "8%" }}>
         <thead>
-          <tr >
+          <tr style={{ border: "2px solid red" }}>
             <th>IMAGE</th>
             <th>TITLE</th>
             <th>PRICE</th>
             <th>QUANTITY</th>
-           
           </tr>
         </thead>
-        <tbody >
+        <tbody>
           {cartElements.map((item, index) => (
-            <tr key={index}  style={{ borderBottom: "3px solid green"}}>
+            <tr key={index} style={{ borderBottom: "3px solid green" }}>
               <td>
-                <img src={item.imageUrl} alt={item.title} style={{width:"100px" ,height:"80px"}} />
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  style={{
+                    width: "120px",
+                    height: "110px",
+                    borderRadius: "10px",
+                  }}
+                />
               </td>
               <td>{item.title}</td>
               <td>{item.price}</td>
               <td>{item.quantity}</td>
-              <td>
-                <button>REMOVE</button>
+              <td style={{ marginLeft: "700px" }}>
+                <button onClick={()=>HandleRemove(index)}>REMOVE</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
+    </CartPortal>
   );
 };
 
 export default Cart;
-
-
-//style={{width:"100px" ,height:"80px"}}

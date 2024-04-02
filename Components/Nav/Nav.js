@@ -4,66 +4,15 @@ import { BsCart4 } from "react-icons/bs";
 import "../Nav/Nav.css";
 import Cart from "../Cart/CartItems";
 import DummySlider from "../Slider/Slider";
+import { useProductContext } from "../AddCart/CartProviders";
 const Nav = () => {
  const[Visible,SetVisible]= useState(false);
-
+   const{CartItems}=useProductContext();
  const ToggleVisiblity=()=>{
   SetVisible(!Visible);
  }
 
 
- const CartElements=[
-  {
-    title: "Iphone 12",
-
-    price: "99,999",
-
-    imageUrl:
-      "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/k/l/l/-original-imagtc5fz9spysyk.jpeg?q=70",
-      quantity: 1,
-  },
-
-  {
-    title: "One Plus 12",
-
-    price: "69,999",
-
-    imageUrl:
-      "https://m.media-amazon.com/images/I/41pR0qlI0yL._SX300_SY300_QL70_FMwebp_.jpg",
-      quantity: 1,
-  },
-
-  {
-    title: "Realme ",
-
-    price: "19,999",
-
-    imageUrl:
-      "https://m.media-amazon.com/images/I/41tSQSq1xJL._SX300_SY300_QL70_FMwebp_.jpg",
-
-      quantity: 1,
-  },
-
-  {
-    title: "Realme Nazro",
-
-    price: "17,999",
-
-    imageUrl:
-      "https://m.media-amazon.com/images/I/8195A49fZbL._AC_UY327_FMwebp_QL65_.jpg",
-      quantity: 5,
-
-  },
-  {
-    title: "Redmi ",
-
-    price: "17,889",
-
-    imageUrl:
-      "https://m.media-amazon.com/images/I/813ZN8Pj-HL._AC_UY327_FMwebp_QL65_.jpg",
-      quantity: 9,
-  },
-];
   return (
     <div>
       <div className="Nav_items">
@@ -76,14 +25,18 @@ const Nav = () => {
         <IoPersonCircle />
       </span>
       <span onClick={ToggleVisiblity}>
-        <BsCart4 /> CART
+        
+        <BsCart4 /> CART 
+        <span style={{ padding:"3px", color:"pink", border:"2px solid blue",marginTop:"-20px" ,marginLeft:"20px"}}>
+        {CartItems.length}
+        </span>
       </span>
-    
+      
       </div>
    
       <div>
         <h1>The Generics</h1>
-        {Visible && <Cart cartElements={CartElements}/>}
+        {Visible && <Cart cartElements={CartItems}/>}
       </div>
       <DummySlider/>
       <h3>Best Deals on SmartPhones</h3>

@@ -4,17 +4,17 @@ import Offer from "./Components/Offers/Offer";
 
 import TopDealings from "./Components/TopDeals/TopDeal";
 import Advertisement from "./Components/AdverTiseMent/AdverTises";
-
+import { ProductProvider } from "./Components/AddCart/CartProviders";
 function App() {
   return (
-    <div>
+    <ProductProvider>
       <Nav />
 
       <Dummy />
       <Offer />
       <TopDealings />
       <Advertisement />
-    </div>
+    </ProductProvider>
   );
 }
 

@@ -2,60 +2,66 @@ import React from "react";
 import "../Dummyitems/Phones.css"
 import { IoMdCart } from "react-icons/io";
 import { LiaRupeeSignSolid } from "react-icons/lia";
-
+import { useProductContext } from "../AddCart/CartProviders";
 const Dummy = () => {
+    const{ AddTocart}=useProductContext();
   const productsArr = [
     {
       title: "Iphone 12",
 
-      price: 99999,
+      price: "98,899",
 
       imageUrl:
         "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/k/l/l/-original-imagtc5fz9spysyk.jpeg?q=70",
-        quantity: 1,
+        
     },
 
     {
       title: "One Plus 12",
 
-      price:69999,
+      price: "69,999",
 
       imageUrl:
         "https://m.media-amazon.com/images/I/41pR0qlI0yL._SX300_SY300_QL70_FMwebp_.jpg",
-        quantity: 1,
+       
     },
 
     {
       title: "Realme ",
 
-      price: 19999,
+      price: "19,999",
 
       imageUrl:
         "https://m.media-amazon.com/images/I/41tSQSq1xJL._SX300_SY300_QL70_FMwebp_.jpg",
 
-        quantity: 1,
+        
     },
 
     {
       title: "Realme Nazro",
 
-      price: 17999,
+      price: "17,999",
 
       imageUrl:
         "https://m.media-amazon.com/images/I/8195A49fZbL._AC_UY327_FMwebp_QL65_.jpg",
-        quantity: 5,
+        
 
     },
     {
       title: "Redmi ",
 
-      price: 17889,
+      price: "17,889",
 
       imageUrl:
         "https://m.media-amazon.com/images/I/813ZN8Pj-HL._AC_UY327_FMwebp_QL65_.jpg",
-        quantity: 9,
+    
     },
   ];
+
+  const AddProductsToCart=(product)=>{
+   AddTocart(product)
+  }
+  
   return (
     <div>
       <div className="container">
@@ -69,11 +75,11 @@ const Dummy = () => {
            
             <span className="price_logo"><LiaRupeeSignSolid />{product.price}</span>
             
-            <button  className="Cart_logo">
+            <button  className="Cart_logo" onClick={()=>AddProductsToCart(product)}>
               <IoMdCart />
               Cart
             </button>
-            <span style={{marginLeft:"20px"}}>{product.quantity}</span>
+           
             </span>
           </div>
         ))}
