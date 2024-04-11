@@ -1,45 +1,59 @@
 import React, { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { IoPersonCircle } from "react-icons/io5";
 import { BsCart4 } from "react-icons/bs";
 import "../Nav/Nav.css";
 import Cart from "../Cart/CartItems";
 import DummySlider from "../Slider/Slider";
 import { useProductContext } from "../AddCart/CartProviders";
-const Nav = () => {
- const[Visible,SetVisible]= useState(false);
-   const{CartItems}=useProductContext();
- const ToggleVisiblity=()=>{
-  SetVisible(!Visible);
- }
 
+const Nav = () => {
+ const [visible, setVisible] = useState(false);
+  const { CartItems } = useProductContext();
+  const Location = useLocation();
+
+  const toggleVisibility = () => {
+    setVisible(!visible);
+  };
+
+  const visibleHomePageonly = Location.pathname === "/";
 
   return (
     <div>
       <div className="Nav_items">
-        <span>HOME</span>
-        <span>STORE</span>
-        <span>SEARCH</span>
-        <span>ABOUT</span>
-     
-      <span>
-        <IoPersonCircle />
-      </span>
-      <span onClick={ToggleVisiblity}>
-        
-        <BsCart4 /> CART 
-        <span style={{ padding:"3px", color:"pink", border:"2px solid blue",marginTop:"-20px" ,marginLeft:"20px"}}>
-        {CartItems.length}
+        <div className="Allnavitems">
+        <NavLink to="../" >HOME</NavLink>
+        <NavLink >STORE</NavLink>
+        <NavLink >SEARCH</NavLink>
+        <NavLink to="/about">ABOUT</NavLink>
+        </div>
+        <span>
+          <IoPersonCircle />
+        </span> 
+        <span onClick={toggleVisibility}>
+          <BsCart4 /> CART
+          <span
+            style={{
+              padding: "3px",
+              color: "pink",
+              border: "2px solid blue",
+              marginTop: "-20px",
+              marginLeft: "20px",
+            }}
+          >
+            {CartItems.length}
+          </span>
         </span>
-      </span>
-      
       </div>
-   
+
       <div>
-        <h1>The Generics</h1>
-        {Visible && <Cart cartElements={CartItems}/>}
+        <div>{visibleHomePageonly && <h1>The Generics</h1>}</div>
+
+       {visibleHomePageonly &&<DummySlider />}
+        {visible && <Cart cartElements={CartItems} />}
       </div>
-      <DummySlider/>
-      <h3>Best Deals on SmartPhones</h3>
+
+     { visibleHomePageonly && <h3>Best Deals on SmartPhones</h3>}
     </div>
   );
 };

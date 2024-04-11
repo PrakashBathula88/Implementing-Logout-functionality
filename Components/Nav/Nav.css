@@ -11,3 +11,11 @@
 .Nav_items span{
     width: 1000px;
 }
+.Allnavitems{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    color: red;
+    margin-left: 100px;
+    
+}
