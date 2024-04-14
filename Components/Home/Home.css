@@ -1,0 +1,38 @@
+.Heading_Generics{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%;
+    height: 80%; */
+    background-color: #777777;
+    padding: 30px;
+    height: 360px;
+}
+.Heading_Generics h1{
+color: #ffffff;
+padding: 30px;  
+font-size: 100px;
+margin-top: -50px;
+}
+.Heading_Generics h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40px;
+    border: 2px solid skyblue;
+   
+   padding: 20px;
+   width: 370px;
+    font: 30px arial;
+    margin-left: 170px;
+}
+/* .Heading_Generics p{
+       display: flex;
+       align-items: center;
+       justify-content: center; 
+       margin-top: 20px; 
+       padding: 0px;
+       color: skyblue;
+       width: 100px;
+       height: 100px;
+} */

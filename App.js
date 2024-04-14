@@ -7,7 +7,7 @@ import TopDealings from "./Components/TopDeals/TopDeal";
 import Advertisement from "./Components/AdverTiseMent/AdverTises";
 import About from "./Components/About/About";
 import { ProductProvider } from "./Components/AddCart/CartProviders";
-
+import Albums from "./Components/Home/Home";
 function App() {
   return (
     <ProductProvider>
@@ -17,6 +17,7 @@ function App() {
           <Route path="/" element={<HomeSection />}></Route>
 
           <Route path="/about" element={<About />} />
+          <Route path="/Album" element={<Albums />}></Route>
         </Routes>
       </Router>
     </ProductProvider>
