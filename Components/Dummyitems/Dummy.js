@@ -6,8 +6,10 @@ import { useProductContext } from "../AddCart/CartProviders";
 const Dummy = () => {
   const { AddTocart } = useProductContext();
   const [Phones, setPhones] = useState([]);
+  const[Loading,SetLoading]=useState(true);
   useEffect(() => {
     const FetchingProducts = async () => {
+      
       try {
       
         const productsArr = [
@@ -56,11 +58,13 @@ const Dummy = () => {
           },
         ];
         setPhones(productsArr);
+        SetLoading(false);
       } catch (error) {
         console.error(error);
       }
     };
     FetchingProducts();
+  
   }, []);
   const AddProductsToCart = (product) => {
     AddTocart(product);
@@ -68,6 +72,9 @@ const Dummy = () => {
 
   return (
     <div>
+        {Loading ?(
+          <div>Loading...</div>
+          ) : (
       <div className="container">
         {Phones.map((product, index) => (
           <div key={index} className="All_products">
@@ -86,6 +93,7 @@ const Dummy = () => {
                 className="Cart_logo"
                 onClick={() => AddProductsToCart(product)}
               >
+             
                 <IoMdCart />
                 Cart
               </button>
@@ -93,6 +101,7 @@ const Dummy = () => {
           </div>
         ))}
       </div>
+      )}
     </div>
   );
 };
