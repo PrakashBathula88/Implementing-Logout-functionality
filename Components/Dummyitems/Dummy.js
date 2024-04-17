@@ -7,6 +7,7 @@ const Dummy = () => {
   const { AddTocart } = useProductContext();
   const [Phones, setPhones] = useState([]);
   const[Loading,SetLoading]=useState(true);
+  const[error,SetError]=useState(null);
   useEffect(() => {
     const FetchingProducts = async () => {
       
@@ -60,6 +61,7 @@ const Dummy = () => {
         setPhones(productsArr);
         SetLoading(false);
       } catch (error) {
+        SetError("Something went Wrong");
         console.error(error);
       }
     };
