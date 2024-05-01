@@ -18,7 +18,7 @@ const Albums = () => {
               width: "15%",
               height: "20%",
               marginLeft: "300px",
-              // color: "skyblue",
+              
               backgroundColor:"1px solid skyblue",
               marginTop: "-10px",
             }}
@@ -64,7 +64,7 @@ const Albums = () => {
             <span className="Album_data">AUG 7</span>
             <span className="Album_min">CONCORD, CA</span>
             <span className="Album_Ener">CONCORD PAVILION</span>
-            <button className="Album_buttton">BUY TICKETS</button>
+            <button className="Album_buttton" >BUY TICKETS</button>
           </div>
         </div>
       </div>
