@@ -13,7 +13,7 @@ export const ProductProvider = ({ children }) => {
     SetCartItems([...CartItems, ListItems]);
     axios
       .post(
-        "https://crudcrud.com/api/a8db78836fed4a8e8347d17b6359d24c/cart",
+        "https://commerce-24c08-default-rtdb.firebaseio.com/cart.json",
         ListItems
       )
       .then((response) => {
@@ -28,7 +28,7 @@ export const ProductProvider = ({ children }) => {
     const FetchData = async () => {
       try {
         const response = await axios.post(
-          "https://crudcrud.com/api/a8db78836fed4a8e8347d17b6359d24c/cart"
+          "https://commerce-24c08-default-rtdb.firebaseio.com/cart.json"
         );
         SetCartItems(response.data);
         SetLoad(true);
