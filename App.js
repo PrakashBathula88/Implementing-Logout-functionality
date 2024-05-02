@@ -27,7 +27,7 @@ function App() {
 const HomeSection = () => {
   return (
     <React.Fragment>
-      <Dummy />
+      <Dummy  style={{width:"100vh"}} />
       <Offer />
       <TopDealings />
       <Advertisement />

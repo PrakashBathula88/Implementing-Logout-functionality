@@ -74,7 +74,8 @@ const Dummy = () => {
   };
 
   return (
-    <div>
+    <div >
+   
         {Loading ?(
           <div>Loading...</div>
           ) : (

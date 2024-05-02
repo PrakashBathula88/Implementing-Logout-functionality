@@ -19,7 +19,7 @@ const Nav = () => {
   const visibleHomePageonly = Location.pathname === "/";
 
   return (
-    <div>
+    <div  >
       <div className="Nav_items">
         <div className="Allnavitems">
         <NavLink to="../" >HOME</NavLink>
