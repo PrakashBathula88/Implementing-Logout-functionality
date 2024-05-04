@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import Nav from "./Components/Nav/Nav";
 import Dummy from "./Components/Dummyitems/Dummy";
 import Offer from "./Components/Offers/Offer";
@@ -8,6 +8,7 @@ import Advertisement from "./Components/AdverTiseMent/AdverTises";
 import About from "./Components/About/About";
 import { ProductProvider } from "./Components/AddCart/CartProviders";
 import Albums from "./Components/Home/Home";
+import Contact from "./Components/Contact/Contact.js";
 function App() {
   return (
     <ProductProvider>
@@ -15,19 +16,22 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<HomeSection />}></Route>
-
           <Route path="/about" element={<About />} />
-          <Route path="/Album" element={<Albums />}></Route>
-        </Routes>
+          <Route path="/contact" element={<Contact />}/>
+          <Route path="/album" element={<Albums />}></Route>
+          {/* <Route path="/contact" element={<Contact />}/> */}
+        </Routes> 
+        
       </Router>
     </ProductProvider>
+   
   );
 }
 
 const HomeSection = () => {
   return (
     <React.Fragment>
-      <Dummy  style={{width:"100vh"}} />
+      <Dummy   />
       <Offer />
       <TopDealings />
       <Advertisement />

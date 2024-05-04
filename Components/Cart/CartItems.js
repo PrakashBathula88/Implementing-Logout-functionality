@@ -20,6 +20,7 @@ const Cart = ({ cartElements,Onclose }) => {
           </tr>
         </thead>
         <tbody>
+          
           {cartElements.map((item, index) => (
             <tr key={index} style={{ borderBottom: "3px solid green" }}>
               <td>

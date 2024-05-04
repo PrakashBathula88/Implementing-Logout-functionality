@@ -1,11 +1,11 @@
 const About = () => {
   return (
     <div>
-      <h1 style={{textAlign:"center",margin:"0",padding:"0px",paddingBottom:"30px" ,background:"#777", color:"white"}}>THE GENERICS</h1>
+      <h1 style={{textAlign:"center",paddingBottom:"30px" ,background:"#777", color:"white",marginTop:"70px"}}>THE GENERICS</h1>
       <div>
-        <h3>ABOUT</h3>
-        <img style={{borderRadius:"50%",width:"350px",height:"350px"}} src="https://prasadyash2411.github.io/ecom-website/img/Band%20Members.png" alt="music_1"></img>
-        <p>
+        <h3 style={{marginLeft:'300px'}}>ABOUT</h3>
+        <img style={{borderRadius:"50%",width:"350px",height:"350px", marginLeft:"170px"}} src="https://prasadyash2411.github.io/ecom-website/img/Band%20Members.png" alt="music_1"></img>
+        <p style={{textDecorationColor:"Highlight",fontStyle:"oblique",color:"black"}}>
           Lorem ipsum carrots enhanced rebates. Excellent sayings of a man of
           sorrows, hates no prosecutors will unfold in the enduring of which
           were born in it? Often leads smallest mistake some pain main

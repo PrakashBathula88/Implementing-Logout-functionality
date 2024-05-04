@@ -1,21 +1,23 @@
-.Nav_items{
-    
+.Nav_items {
     height: 70px;
-    background-color: black;
-    color:blue;
+    background-color: rgba(255, 255, 255, 0.499);
+    color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
-}
-.Nav_items span{
-    width: 1000px;
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    
 }
 .Allnavitems{
-    display:flex;
+    width: 70%;
+    display: flex;
     justify-content: space-around;
-    align-items: center;
-    color: red;
-    margin-left: 100px;
-    
+
+}
+a{
+    text-decoration: none;
 }

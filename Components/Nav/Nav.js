@@ -8,7 +8,7 @@ import DummySlider from "../Slider/Slider";
 import { useProductContext } from "../AddCart/CartProviders";
 
 const Nav = () => {
- const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
   const { CartItems } = useProductContext();
   const Location = useLocation();
 
@@ -19,41 +19,42 @@ const Nav = () => {
   const visibleHomePageonly = Location.pathname === "/";
 
   return (
-    <div  >
+    <div
+      style={{
+        width: "100vw",
+      }}
+    >
       <div className="Nav_items">
         <div className="Allnavitems">
-        <NavLink to="../" >HOME</NavLink>
-        <NavLink  to="/Album">ALBUM</NavLink>
-        <NavLink >SEARCH</NavLink>
-        <NavLink to="/about">ABOUT</NavLink>
+          <NavLink to="/">HOME</NavLink>
+          <NavLink to="/album">ALBUM</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/about">ABOUT</NavLink>
         </div>
         <span>
           <IoPersonCircle />
-        </span> 
-        <span onClick={toggleVisibility}>
-          <BsCart4 /> CART
+        </span>
+        <div>
           <span
             style={{
-              padding: "3px",
-              color: "pink",
-              border: "2px solid blue",
-              marginTop: "-20px",
-              marginLeft: "20px",
+              marginRight: "50px",
             }}
+            onClick={toggleVisibility}
           >
-            {CartItems.length}
+            <BsCart4 /> CART
+            <span>{CartItems.length}</span>
           </span>
-        </span>
+        </div>
       </div>
 
       <div>
-        <div>{visibleHomePageonly && <h1>The Generics</h1>}</div>
+        <div >{visibleHomePageonly && <h1 >The Generics</h1>}</div>
 
-       {visibleHomePageonly &&<DummySlider />}
+        {visibleHomePageonly && <DummySlider />}
         {visible && <Cart cartElements={CartItems} />}
       </div>
 
-     { visibleHomePageonly && <h3>Best Deals on SmartPhones</h3>}
+      {visibleHomePageonly && <h3>Best Deals on SmartPhones</h3>}
     </div>
   );
 };
