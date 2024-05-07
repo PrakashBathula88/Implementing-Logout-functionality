@@ -1,35 +1,38 @@
-.Sliding_top_deals{
-    width: 100%;
-    height: 10px;
-    display: flex;
-    margin-top: 30px;
-    justify-content: space-between;
+.Sliding_top_deals {
 
-    }
-.Sliding_top_deals img{
-    width: 315px;
-    height: 200px;
-   
-    border-radius: 8%;
+  height: 10px;
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+.Sliding_top_deals img {
+  width: 310px;
+  height: 200px;
 
+  border-radius: 8%;
 }
-.Sliding_top_deals h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Sliding_top_deals h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-    
-.Sliding_top_deals p{
-    display: flex;
-    margin-left: 60px;
-    color: darkcyan;
+
+.Sliding_top_deals p {
+  display: flex;
+  margin-left: 60px;
+  color: darkcyan;
 }
-.Sliding_top_deals button{
-    margin-left: 150px;
-    margin-bottom: 100x;
-    display: flex;
-    margin-top: -34px;
-    padding: 3px;
-    color: blueviolet;
-    justify-content: space-between;
+.Sliding_top_deals button {
+  margin-left: 140px;
+  margin-bottom: 100x;
+  display: flex;
+  margin-top: -34px;
+  padding: 3px;
+  color: blueviolet;
+  justify-content: space-between;
+ 
 }
+/* .Border-top {
+  width: 100vw;
+  
+} */

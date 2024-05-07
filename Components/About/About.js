@@ -1,7 +1,7 @@
 const About = () => {
   return (
-    <div>
-      <h1 style={{textAlign:"center",paddingBottom:"30px" ,background:"#777", color:"white",marginTop:"70px"}}>THE GENERICS</h1>
+    <div >
+      <h1 style={{textAlign:"center",paddingBottom:"30px" ,background:"#777", color:"white",marginTop:"130px"}}>THE GENERICS</h1>
       <div>
         <h3 style={{marginLeft:'300px'}}>ABOUT</h3>
         <img style={{borderRadius:"50%",width:"350px",height:"350px", marginLeft:"170px"}} src="https://prasadyash2411.github.io/ecom-website/img/Band%20Members.png" alt="music_1"></img>

@@ -12,13 +12,15 @@
   color: #ffffff;
   padding: 30px;
   font-size: 100px;
-  margin-top: -50px;
+  /* margin-top: -50px; */
+ 
 }
 .Heading_Generics h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -40px;
+  margin-top: -100px;
+
   border: 1px solid skyblue;
 
   padding: 20px;

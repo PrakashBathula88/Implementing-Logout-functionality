@@ -8,7 +8,7 @@ const TopDealings = () => {
   
   return (
     <div className="Border-top">
-      <h1 style={{height:"80px",width:"100%",backgroundColor:"green",justifyContent:"center",alignItems:"center",textAlign:"center"}}>Top Deals</h1>
+      <h1 >Top Deals</h1>
       <div className="Sliding_top_deals">
         <div>
           <img

@@ -23,4 +23,10 @@
     padding-top: 20px;
     background-color: white;
     border-radius: 10px ;
+   padding: auto;
+   
+   
+}
+.All_products span{
+    cursor: pointer;
 }

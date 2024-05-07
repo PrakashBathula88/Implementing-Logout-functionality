@@ -1,6 +1,6 @@
 import React from "react";
 import { FaRegCirclePlay } from "react-icons/fa6";
-import "../Home/Home.css";
+import "./Home.css";
 const Albums = () => {
   return (
     <div>
@@ -14,13 +14,13 @@ const Albums = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              padding: "20px",
+              padding: "24px",
               width: "15%",
-              height: "20%",
+              height: "10%",
               marginLeft: "300px",
-              
+           
               backgroundColor:"1px solid skyblue",
-              marginTop: "-10px",
+              marginTop: "-50px",
             }}
           />
         </span>

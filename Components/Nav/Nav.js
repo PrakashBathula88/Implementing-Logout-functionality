@@ -19,20 +19,16 @@ const Nav = () => {
   const visibleHomePageonly = Location.pathname === "/";
 
   return (
-    <div
-      style={{
-        width: "100vw",
-      }}
-    >
+    <div>
       <div className="Nav_items">
         <div className="Allnavitems">
-          <NavLink to="/">HOME</NavLink>
-          <NavLink to="/album">ALBUM</NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/album">Album</NavLink>
           <NavLink to="/contact">Contact</NavLink>
-          <NavLink to="/about">ABOUT</NavLink>
+          <NavLink to="/about">About</NavLink>
         </div>
         <span>
-          <IoPersonCircle />
+         Login < IoPersonCircle />
         </span>
         <div>
           <span
@@ -41,20 +37,22 @@ const Nav = () => {
             }}
             onClick={toggleVisibility}
           >
+            <div className="cart_page_cart">
             <BsCart4 /> CART
-            <span>{CartItems.length}</span>
+            <span >{CartItems.length}</span>
+            </div>
           </span>
         </div>
       </div>
 
-      <div>
-        <div >{visibleHomePageonly && <h1 >The Generics</h1>}</div>
+      <div className="Gene_Cart_len">
+      {visibleHomePageonly && <h1  >The Generics</h1>}
 
-        {visibleHomePageonly && <DummySlider />}
+       <div style={{marginTop:"-50px"}}> {visibleHomePageonly && <DummySlider />}</div>
         {visible && <Cart cartElements={CartItems} />}
       </div>
 
-      {visibleHomePageonly && <h3>Best Deals on SmartPhones</h3>}
+      {visibleHomePageonly && <h3 style={{fontSize:"25px",fontFamily:"serif",position:"absolute",marginTop:"10px",color:"black"}}>Best Deals on SmartPhones</h3>}
     </div>
   );
 };

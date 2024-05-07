@@ -13,9 +13,9 @@ const DummySlider = () => {
     autoplay: true,
   };
   return (
-    <Slider {...Settings}>
-
-      <div>
+    <Slider {...Settings}  style={{margintop:"400px"}}>
+  
+      <div >
         <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/3c4df1bcf25b7565.jpg?q=20" alt="1"></img>
       </div>
      
