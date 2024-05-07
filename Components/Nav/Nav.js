@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { IoPersonCircle } from "react-icons/io5";
 import { BsCart4 } from "react-icons/bs";
 import "../Nav/Nav.css";
 import Cart from "../Cart/CartItems";
@@ -22,14 +21,13 @@ const Nav = () => {
     <div>
       <div className="Nav_items">
         <div className="Allnavitems">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/album">Album</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
-          <NavLink to="/about">About</NavLink>
+          <NavLink to="/">HOME</NavLink>
+          <NavLink to="/album">ALBUM</NavLink>
+          <NavLink to="/contact">CONTACT</NavLink>
+          <NavLink to="/about">ABOUT</NavLink>
+          <NavLink to="/signin">SIGNIN</NavLink>
         </div>
-        <span>
-         Login < IoPersonCircle />
-        </span>
+
         <div>
           <span
             style={{
@@ -38,21 +36,36 @@ const Nav = () => {
             onClick={toggleVisibility}
           >
             <div className="cart_page_cart">
-            <BsCart4 /> CART
-            <span >{CartItems.length}</span>
+              <BsCart4 /> CART
+              <span>{CartItems.length}</span>
             </div>
           </span>
         </div>
       </div>
 
       <div className="Gene_Cart_len">
-      {visibleHomePageonly && <h1  >The Generics</h1>}
+        {visibleHomePageonly && <h1>The Generics</h1>}
 
-       <div style={{marginTop:"-50px"}}> {visibleHomePageonly && <DummySlider />}</div>
+        <div style={{ marginTop: "-50px" }}>
+          {" "}
+          {visibleHomePageonly && <DummySlider />}
+        </div>
         {visible && <Cart cartElements={CartItems} />}
       </div>
 
-      {visibleHomePageonly && <h3 style={{fontSize:"25px",fontFamily:"serif",position:"absolute",marginTop:"10px",color:"black"}}>Best Deals on SmartPhones</h3>}
+      {visibleHomePageonly && (
+        <h3
+          style={{
+            fontSize: "25px",
+            fontFamily: "serif",
+            position: "absolute",
+            marginTop: "10px",
+            color: "black",
+          }}
+        >
+          Best Deals on SmartPhones
+        </h3>
+      )}
     </div>
   );
 };

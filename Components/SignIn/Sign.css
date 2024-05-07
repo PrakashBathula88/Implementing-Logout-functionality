@@ -1,0 +1,63 @@
+.All_sign_in {
+ display: grid;
+ justify-content: center;
+ align-items: center;
+ margin-top: 14%;
+ border: 2px solid green;
+ width: 350px;
+margin-left: 40%;
+padding: 28px;
+padding-bottom: 48px;
+background-color: blue;
+color: white;
+border-radius: 10px;
+
+}
+.All_sign_in input{
+    width: 350px;
+    padding: 10px;
+    border-radius: 8px ;
+}
+.All_sign_in h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: relative;
+}
+.All_sign_in h3{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.All_sign_in button{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-left: 100px;
+    margin-top: 50px;
+    border-radius: 5;
+    width: 200px;
+}
+/* .img_1{
+    background-image: url("https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=1060&t=st=1715092127~exp=1715092727~hmac=f39320090164dcecf882d18bc760ff0d4481a145a361f26b5041045d1567cf36");
+    background-repeat: no-repeat;
+    height: 110vh;
+    width: 100%;
+  margin-top:-150px ;
+  position: relative;
+} */
+/* .img_1{
+    background-color: aqua;
+    height: 92vh;
+    margin-top: -150px;
+    position: relative;
+} */
+
+.loader{
+    margin-left: 150px;
+    margin-top: 60px;
+    font-size: x-large;
+}

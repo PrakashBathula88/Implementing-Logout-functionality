@@ -1,6 +1,7 @@
 .Nav_items {
   height: 70px;
-  background-color: rgba(255, 255, 255, 0.499);
+  /* background-color: rgba(255, 255, 255, 0.499); */
+  background-color: rgb(0, 0, 0);
   z-index: 999;
   display: flex;
   justify-content: space-between;
@@ -15,10 +16,10 @@
 }
 
 .Allnavitems {
-  width: 70%;
+  width: 80%;
   display: flex;
   justify-content: space-around;
- 
+
 }
 a {
   text-decoration: none;

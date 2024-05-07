@@ -10,6 +10,7 @@ import { ProductProvider } from "./Components/AddCart/CartProviders";
 import Albums from "./Components/Albums/Home.js";
 import Contact from "./Components/Contact/Contact.js";
 import Singlepage from "./Components/Singlepage/Singlepage.jsx";
+import Signin from "./Components/SignIn/Signin.jsx";
 function App() {
   return (
     <div>
@@ -23,6 +24,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/album" element={<Albums />}></Route>
+            <Route path="/Signin" element={<Signin/>}></Route>
           </Routes>
         </Router>
       </ProductProvider>
