@@ -8,19 +8,29 @@ function Signin() {
   const [loading, setloading] = useState("");
   const fetching = () => {
     setloading(true);
-    const all = { mail, pass };
-    // setsign([...sign, all]);
+
+    const data = {
+      email: mail,
+      password: pass,
+      token: true,
+    };
     axios
-      .post("https://commerce-24c08-default-rtdb.firebaseio.com/", all)
+      .post(
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[https://commerce-24c08-default-rtdb.firebaseio.com/]/",
+        data
+      )
 
       .then((response) => {
         console.log(response.data);
+        const { idToken } = response.data;
+        console.log(idToken);
         setmail("");
         setpass("");
       })
 
       .catch((err) => {
         console.error(err);
+        alert("Authentication Failed");
       })
 
       .finally(() => {
@@ -39,6 +49,7 @@ function Signin() {
           onChange={(event) => {
             setmail(event.target.value);
           }}
+          autoComplete="off"
         ></input>
         <h3>Your Password</h3>
         <input
