@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Nav from "./Components/Nav/Nav";
 import Dummy from "./Components/Dummyitems/Dummy";
 import Offer from "./Components/Offers/Offer";
@@ -11,20 +16,27 @@ import Albums from "./Components/Albums/Home.js";
 import Contact from "./Components/Contact/Contact.js";
 import Singlepage from "./Components/Singlepage/Singlepage.jsx";
 import Signin from "./Components/SignIn/Signin.jsx";
+import { useAuth } from "./Components/LoginProvider/Loginprovider.jsx";
+
+import Profile from "./Components/Profile/Profile.jsx";
 function App() {
+  const { token } = useAuth();
   return (
     <div>
       <ProductProvider>
         <Router>
           <Nav />
           <Routes>
-         
             <Route path="/" element={<HomeSection />}></Route>
-            <Route path="singlepage/:id" element={<Singlepage/>}></Route>
+            <Route path="singlepage/:id" element={<Singlepage />}></Route>
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/album" element={<Albums />}></Route>
-            <Route path="/Signin" element={<Signin/>}></Route>
+            {token ? (
+              <Navigate to="/profile" element={<Profile/>} />
+            ) : (
+              <Route path="/Signin" element={<Signin />}></Route>
+            )}
           </Routes>
         </Router>
       </ProductProvider>

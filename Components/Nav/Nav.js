@@ -5,11 +5,13 @@ import "../Nav/Nav.css";
 import Cart from "../Cart/CartItems";
 import DummySlider from "../Slider/Slider";
 import { useProductContext } from "../AddCart/CartProviders";
+import { useAuth } from "../LoginProvider/Loginprovider";
 
 const Nav = () => {
   const [visible, setVisible] = useState(false);
   const { CartItems } = useProductContext();
   const Location = useLocation();
+  const { token } = useAuth();
 
   const toggleVisibility = () => {
     setVisible(!visible);
@@ -25,7 +27,11 @@ const Nav = () => {
           <NavLink to="/album">ALBUM</NavLink>
           <NavLink to="/contact">CONTACT</NavLink>
           <NavLink to="/about">ABOUT</NavLink>
-          <NavLink to="/signin">SIGNIN</NavLink>
+          {/* {token ? ( */}
+            <NavLink to="/signin">SIGNIN</NavLink>
+      
+            <NavLink to="/profile">Profile</NavLink>
+      
         </div>
 
         <div>

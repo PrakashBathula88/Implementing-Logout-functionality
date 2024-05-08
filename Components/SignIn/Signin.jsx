@@ -1,41 +1,21 @@
 import React, { useState } from "react";
 import "../SignIn/Sign.css";
-import axios from "axios";
+
+import { useAuth } from "../LoginProvider/Loginprovider";
 function Signin() {
   const [mail, setmail] = useState("");
   const [pass, setpass] = useState("");
-  // const [sign, setsign] = useState({});
-  const [loading, setloading] = useState("");
+  const { Login } = useAuth();
+  const [loading, setloading] = useState(false);
+
   const fetching = () => {
     setloading(true);
+    setTimeout(() => {
+      setloading(false);
 
-    const data = {
-      email: mail,
-      password: pass,
-      token: true,
-    };
-    axios
-      .post(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[https://commerce-24c08-default-rtdb.firebaseio.com/]/",
-        data
-      )
-
-      .then((response) => {
-        console.log(response.data);
-        const { idToken } = response.data;
-        console.log(idToken);
-        setmail("");
-        setpass("");
-      })
-
-      .catch((err) => {
-        console.error(err);
-        alert("Authentication Failed");
-      })
-
-      .finally(() => {
-        setloading(false);
-      });
+      const token = "Getting the token";
+      Login(token);
+    }, 1000); 
   };
   return (
     <div className="img_1">
@@ -63,7 +43,7 @@ function Signin() {
           <div className="loader">Loading...</div>
         ) : (
           <button type="submit" onClick={fetching}>
-            CREATE NEW ACCOUNT
+            LOGIN
           </button>
         )}
       </div>
