@@ -54,9 +54,8 @@ function Signin() {
         }
       })
       .then((data) => {
-        
+        navigate("/");
         authCtx.Login(data.idToken);
-     
       })
       .catch((err) => {
         // alert(err.message);
@@ -83,7 +82,6 @@ function Signin() {
             {!loading && (
               <button type="submit">
                 {islogin ? "Login" : "Create Account"}
-                {   navigate('/')}
               </button>
             )}
             {loading && <p className="Load">Loading...</p>}

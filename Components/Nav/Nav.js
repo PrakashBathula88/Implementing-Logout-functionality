@@ -1,25 +1,29 @@
 import React, { useState, useContext } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
 import "../Nav/Nav.css";
 import Cart from "../Cart/CartItems";
 import DummySlider from "../Slider/Slider";
 import { useProductContext } from "../AddCart/CartProviders";
 
-// import { Authcontext } from "../LoginProvider/Loginprovider";
 import Authcontext from "../LoginProvider/Loginprovider";
+
 const Nav = () => {
   const [visible, setVisible] = useState(false);
   const { CartItems } = useProductContext();
   const Location = useLocation();
 
   const Authctx = useContext(Authcontext);
+  const isLoggedin = Authctx.isLoggedin;
 
   const toggleVisibility = () => {
     setVisible(!visible);
   };
 
-  const isLoggedin = Authctx.isLoggedin;
+  const logoutHandler = () => {
+    Authctx.Logout();
+ 
+  };
 
   const visibleHomePageonly = Location.pathname === "/";
 
@@ -27,18 +31,27 @@ const Nav = () => {
     <div>
       <div className="Nav_items">
         <div className="Allnavitems">
-          <NavLink to="/">HOME</NavLink>
-          <NavLink to="/album">ALBUM</NavLink>
-          <NavLink to="/contact">CONTACT</NavLink>
-          <NavLink to="/about">ABOUT</NavLink>
+          <Link to="/">HOME</Link>
+          <Link to="/album">ALBUM</Link>
+          <Link to="/contact">CONTACT</Link>
+          <Link to="/about">ABOUT</Link>
 
-          {!isLoggedin && <Link to="/signin">Login</Link>}
+          {!isLoggedin && (
+            <li>
+              <Link to="/signin">Login</Link>
+            </li>
+          )}
 
-          {isLoggedin && <Link to="/profile">Profile</Link>}
+          {isLoggedin && (
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
+          )}
 
           {isLoggedin && (
             <li>
               <button
+                onClick={logoutHandler}
                 style={{
                   height: "34px",
                   width: "80px",
@@ -49,7 +62,6 @@ const Nav = () => {
                   cursor: "pointer",
                 }}
               >
-                {" "}
                 Logout
               </button>
             </li>

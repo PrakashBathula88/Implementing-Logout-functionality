@@ -12,19 +12,19 @@ import React, { useState } from "react";
 
   const userisloggedin = !!token;
 
-  const loginhandler = (token) => {
+  const loginHandler = (token) => {
     settoken(token);
   };
 
-  const logouthandler = () => {
+  const logoutHandler = () => {
     settoken(null);
   };
 
   const Handling = {
     token: token,
     isLoggedin: userisloggedin,
-    Login: loginhandler,
-    Logout: logouthandler,
+    Login: loginHandler,
+    Logout: logoutHandler,
   };
 
   return (

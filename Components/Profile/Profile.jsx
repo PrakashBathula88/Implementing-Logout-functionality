@@ -7,7 +7,9 @@ import Authcontext from "../LoginProvider/Loginprovider";
 const Profile = () => {
   const navigate=useNavigate();
   const newpasswordInputref = useRef();
+
   const authCtx = useContext(Authcontext);
+
   const SubmitHandler = (event) => {
     event.preventDefault();
     const enteredNewpassword = newpasswordInputref.current.value;
@@ -23,9 +25,8 @@ const Profile = () => {
         }),
         headers: {
           "Content-Type": "application/json",
-        },
-      }
-    ).then(res =>{
+        }
+      }).then(res =>{
       navigate('/')
     });
   };
