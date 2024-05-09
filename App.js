@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
 } from "react-router-dom";
 import Nav from "./Components/Nav/Nav";
 import Dummy from "./Components/Dummyitems/Dummy";
@@ -16,11 +15,10 @@ import Albums from "./Components/Albums/Home.js";
 import Contact from "./Components/Contact/Contact.js";
 import Singlepage from "./Components/Singlepage/Singlepage.jsx";
 import Signin from "./Components/SignIn/Signin.jsx";
-import { useAuth } from "./Components/LoginProvider/Loginprovider.jsx";
 
 import Profile from "./Components/Profile/Profile.jsx";
 function App() {
-  const { token } = useAuth();
+  // const { token } = useAuth();
   return (
     <div>
       <ProductProvider>
@@ -32,11 +30,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/album" element={<Albums />}></Route>
-            {token ? (
-              <Navigate to="/profile" element={<Profile/>} />
-            ) : (
-              <Route path="/Signin" element={<Signin />}></Route>
-            )}
+            <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/Signin" element={<Signin />}></Route>
           </Routes>
         </Router>
       </ProductProvider>

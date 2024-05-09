@@ -305,6 +305,7 @@ function Singlepage() {
                 </p>
                 <img
                   src="https://rukminim2.flixcart.com/image/200/200/cms-rpd-img/2a68bc53a5b740068a62b8140a19770e_18a8cada497_1.jpeg?q=90"
+                  alt="Loading..."
                   style={{
                     margin: "0px 80px 70px 700px ",
                     marginTop: "-100px",
@@ -312,6 +313,7 @@ function Singlepage() {
                 ></img>
                 <img
                   src="https://rukminim2.flixcart.com/image/200/200/cms-rpd-img/af0f9e1e23c042ce9d8f27b02bb996d3_18a8cacbaad_HighlyDurable.jpeg?q=90"
+                  alt="Load...."
                   style={{
                     display: "flex",
                     justifyContent: "flex-start",

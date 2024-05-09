@@ -1,21 +1,25 @@
-import React, { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
 import "../Nav/Nav.css";
 import Cart from "../Cart/CartItems";
 import DummySlider from "../Slider/Slider";
 import { useProductContext } from "../AddCart/CartProviders";
-import { useAuth } from "../LoginProvider/Loginprovider";
 
+// import { Authcontext } from "../LoginProvider/Loginprovider";
+import Authcontext from "../LoginProvider/Loginprovider";
 const Nav = () => {
   const [visible, setVisible] = useState(false);
   const { CartItems } = useProductContext();
   const Location = useLocation();
-  const { token } = useAuth();
+
+  const Authctx = useContext(Authcontext);
 
   const toggleVisibility = () => {
     setVisible(!visible);
   };
+
+  const isLoggedin = Authctx.isLoggedin;
 
   const visibleHomePageonly = Location.pathname === "/";
 
@@ -27,11 +31,29 @@ const Nav = () => {
           <NavLink to="/album">ALBUM</NavLink>
           <NavLink to="/contact">CONTACT</NavLink>
           <NavLink to="/about">ABOUT</NavLink>
-          {/* {token ? ( */}
-            <NavLink to="/signin">SIGNIN</NavLink>
-      
-            <NavLink to="/profile">Profile</NavLink>
-      
+
+          {!isLoggedin && <Link to="/signin">Login</Link>}
+
+          {isLoggedin && <Link to="/profile">Profile</Link>}
+
+          {isLoggedin && (
+            <li>
+              <button
+                style={{
+                  height: "34px",
+                  width: "80px",
+                  border: "1px solid white",
+                  backgroundColor: "black",
+                  color: "blue",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                }}
+              >
+                {" "}
+                Logout
+              </button>
+            </li>
+          )}
         </div>
 
         <div>
